@@ -31,6 +31,7 @@
 }
 
 .navigation__logo {
+    padding: 10px 0;
     font-size: 30px;
     font-weight:bold;
     line-height: 0.5px;
@@ -79,6 +80,7 @@
     border: 1px solid red;
     height: 700px;
     background-image: url(assets/images/background.jpg);
+    background-position: 0px -170px;
 }
 
 .about__title {
@@ -100,7 +102,13 @@
 .information {
     display: flex;
     justify-content: center;
+    margin: 45px 260px;
     height: 300px;
+}
+
+.information__item {
+    width: 450px;
+    /* max-width: 340px; */
 }
 
 .item1,
@@ -116,16 +124,24 @@
     display: flex;
 }
 
-.item3,
-.item2,
-.item1  {
-    padding: 0 46px;
-}
 
 .item1__text,
 .item2__text,
 .item3__text {
     padding: 0 15px;
+}
+
+.item-logo__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.item-logo__title :nth-child(1) {
+    font-size: 30px;
+}
+
+.item-logo__title :nth-child(2) {
+    font-size: 18px;
 }
 
 /* section */
@@ -161,9 +177,14 @@
 }
 
 .service-description__quote {
+    display: flex;
+    flex-direction: column;
     height: 300px;
     font-size: 24px;
     width: 524px;
+}
+.service-description__quote > *{
+    font-size: 16px;
 }
 
 .service-description__devices {
@@ -202,6 +223,7 @@
 
 .footer__menu {
     display: flex;
+    margin: 0 220px;
 }
 
 .partners {
@@ -211,9 +233,89 @@
 .emails {
     display: flex;
     flex-direction: column;
-    border: 1px solid rebeccapurple
+    margin-bottom: 30px;
 }
 
 .links {
     display: flex;
 }
+
+.footer__menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+    min-width: 300px;
+    direction:rtl;
+    font-size: 18px;
+}
+
+.footer__menu-item ul {
+    padding-inline-start: 15px;
+    font-size: 14px;
+}
+
+.footer__menu-item li,
+.emails {
+    padding:  0  0 5px 0;
+}
+
+.about__buttoms {
+    display: flex;
+}
+
+.about__button {
+    /* display: inline-block;
+    margin: 40px; */
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #6d4a70;
+/* 
+    box-shadow: 0 3px 20px rgba(0,0,0,.25),
+    inset 0 2px 0 rgba(255,255,255,.6),
+    0 2px 0 rgba(0,0,0,.1),
+    inset 0 0 20px rgba(0,0,0,.1); */
+}
+
+.fa-apple,
+.fa-google-play {
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+}
+
+.about__oval-button {
+    border-radius: 40px;
+    height: 60px;
+    min-width: 250px;
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(to right, #636b92, #6d4a70);
+}
+
+.donation__oval-buttons {
+    display: flex;
+}
+
+
+
+.donation__oval-button1{
+    border-radius: 40px;
+    height: 60px;
+    min-width: 250px;
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(to right, #636b92, #6d4a70);
+}
+
+.donation__oval-button2 {
+    border-radius: 40px;
+    height: 60px;
+    min-width: 250px;
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(to right, #36bae1, #5e7bea);
+}
+
