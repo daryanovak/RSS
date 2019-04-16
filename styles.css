@@ -170,6 +170,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 200px;
     /* text-align: right; */
 }
 
@@ -179,4 +180,40 @@
 
 .service-description__devices :last-child {
     font-size: 16px;
+}
+
+/* donation */
+.donation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.donation :nth-child(1) {
+    font-size: 36px;
+}
+
+.donation :nth-child(2) {
+    font-size: 29px;
+}
+
+/* footer */
+
+.footer__menu {
+    display: flex;
+}
+
+.partners {
+    height: 300px;
+}
+
+.emails {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rebeccapurple
+}
+
+.links {
+    display: flex;
 }
