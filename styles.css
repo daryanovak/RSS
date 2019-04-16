@@ -1,0 +1,182 @@
+@import url(normalize.css);
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url(fonts/MyriadPro-Regular.woff) format('woff'), url(fonts/MyriadPro-Regular.ttf) format('truetype');
+}
+
+* {
+    font-family: "Myriad Pro";
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation__language {
+    display: flex;
+    font-size: 14px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.navigation__language li {
+    padding-right: 30px;
+    margin-top: 25px;
+}
+
+.navigation {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 85px;
+}
+
+.navigation__logo {
+    font-size: 30px;
+    font-weight:bold;
+    line-height: 0.5px;
+}
+
+.navigation__block {
+    display: flex;
+    flex-direction: column
+}
+
+.navigation__menu {
+    display: flex;
+    margin: 0;
+    margin-left: 415px;
+    list-style-type: none;
+    font-size: 16px;
+}
+
+.navigation__menu li {
+    padding-right: 28px;
+}
+
+.authorization {
+    display: flex;
+    margin-left: 50px;
+    min-width: 225px;
+    font-size: 16px;
+    font-weight:bold;
+}
+
+.authorization div {
+    padding-right: 40px;
+}
+
+.link__dribbble {
+    padding-right: 5px;
+}
+
+
+/* header */
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    height: 700px;
+    background-image: url(assets/images/background.jpg);
+}
+
+.about__title {
+    font-size: 60px;
+    font-weight:bold;
+}
+
+.about__info {
+    font-size: 40px;
+    text-align: center;
+}
+
+.link {
+    width: 20px;
+}
+ 
+/* article  */
+
+.information {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+
+.item1,
+.item2,
+.item3 {
+    display: flex;
+    flex-direction: column;
+}
+
+.item1__block,
+.item2__block,
+.item3__block {
+    display: flex;
+}
+
+.item3,
+.item2,
+.item1  {
+    padding: 0 46px;
+}
+
+.item1__text,
+.item2__text,
+.item3__text {
+    padding: 0 15px;
+}
+
+/* section */
+
+.security__title {
+    font-size: 60px;
+}
+
+.security__info {
+    width: 600px;
+    font-size: 24px;
+    text-align: right;
+}
+
+.security {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    border-radius: 10px; 
+    width: 100px;
+    height: 40px;
+    border: 1px solid salmon;	
+}
+
+/* div device */
+
+.service-description {
+    height: 600px;
+}
+
+.service-description__quote {
+    height: 300px;
+    font-size: 24px;
+    width: 524px;
+}
+
+.service-description__devices {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: right; */
+}
+
+.service-description__devices :first-child {
+    font-size: 36px;
+}
+
+.service-description__devices :last-child {
+    font-size: 16px;
+}
