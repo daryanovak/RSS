@@ -21,12 +21,12 @@
 
 .navigation__language li {
     padding-right: 30px;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .navigation {
     margin-left: 200px;
-    margin-right: 200px;
+    margin-right: 155px;
     margin-top: 85px;
 }
 
@@ -45,7 +45,7 @@
 .navigation__menu {
     display: flex;
     margin: 0;
-    margin-left: 415px;
+    margin-left: auto;
     list-style-type: none;
     font-size: 16px;
 }
@@ -63,7 +63,7 @@
 }
 
 .authorization div {
-    padding-right: 40px;
+    padding-right: 25px;
 }
 
 .link__dribbble {
@@ -76,7 +76,6 @@
 .about {
     display: flex;
     justify-content: center;
-    align-items: center;
     border: 1px solid red;
     height: 700px;
     background-image: url(assets/images/background.jpg);
@@ -86,12 +85,27 @@
 .about__title {
     font-size: 60px;
     font-weight:bold;
+    margin-top: 145px;
+    margin-left: 5px;
 }
 
 .about__info {
-    font-size: 40px;
+    padding-top: 4px;
     text-align: center;
+    font-size: 40px;
+    margin-left: 20px;
 }
+
+.about__oval-button {
+    border-radius: 40px;
+    height: 55px;
+    min-width: 250px;
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(to right, #636b92, #6d4a70);
+}
+
+
 
 .link {
     width: 20px;
@@ -101,8 +115,8 @@
 
 .information {
     display: flex;
+    padding: 40px 0 0 165px;
     justify-content: center;
-    margin: 45px 260px;
     height: 300px;
 }
 
@@ -125,10 +139,9 @@
 }
 
 
-.item1__text,
-.item2__text,
-.item3__text {
-    padding: 0 15px;
+.item__text {
+    padding: 0px 70px 0 0;
+    line-height: 1.571;
 }
 
 .item-logo__title {
@@ -158,9 +171,10 @@
 
 .security {
     display: flex;
-    height: 300px;
+    height: 240px;
     align-items: center;
     flex-direction: column;
+    border: 1px solid salmon;	
 }
 
 .button {
@@ -173,16 +187,19 @@
 /* div device */
 
 .service-description {
-    height: 600px;
+    height: 1090px;
+    line-height: 1.292;
+    border: 1px solid red;
 }
 
 .service-description__quote {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    font-size: 24px;
+    padding: 55px 0 0 400px;
     width: 524px;
+    font-size: 24px;
 }
+
 .service-description__quote > *{
     font-size: 16px;
 }
@@ -191,11 +208,22 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 120px;
     height: 200px;
-    /* text-align: right; */
 }
 
-.service-description__devices :first-child {
+.service-description__title {
+    padding-left: 80px;
+    padding-bottom: 15px;
+}
+.service-description__text {
+    max-width: 425px;
+    text-align: right;
+    line-height: 1.375;
+    padding: 0;
+}
+
+.service-description__devices > div:first-child {
     font-size: 36px;
 }
 
@@ -262,6 +290,7 @@
 
 .about__buttoms {
     display: flex;
+    padding: 70px 0 0 195px;
 }
 
 .about__button {
@@ -272,6 +301,7 @@
     cursor: pointer;
     border-radius: 50%;
     background-color: #6d4a70;
+    margin-left: 20px;
 /* 
     box-shadow: 0 3px 20px rgba(0,0,0,.25),
     inset 0 2px 0 rgba(255,255,255,.6),
@@ -284,15 +314,6 @@
     height: 20px;
     width: 20px;
     color: #ffffff;
-}
-
-.about__oval-button {
-    border-radius: 40px;
-    height: 60px;
-    min-width: 250px;
-    font-size: 18px;
-    text-align: center;
-    background: linear-gradient(to right, #636b92, #6d4a70);
 }
 
 .donation__oval-buttons {
@@ -319,3 +340,32 @@
     background: linear-gradient(to right, #36bae1, #5e7bea);
 }
 
+.authorization__log-in-oval-button {
+    border-radius: 40px;
+    height: 45px;
+    width: 65px;
+    /* min-width: 43px; */
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(to right, #636b92, #6d4a70);
+    text-align: center;
+    margin-top: -8px;
+    color: #fff;
+}
+
+.security__oval-button {
+    margin-top: 20px;
+    padding-left: 100px;
+    width: 235px;
+    height: 65px;
+    border-radius: 40px;
+    font-size: 16px;
+    background: linear-gradient(to right, #636b92, #6d4a70);
+    text-align: center;
+    margin-left: 480px;
+}
+
+.service-description__buttons {
+    height: 250px;
+    border: 1px solid red;
+}
