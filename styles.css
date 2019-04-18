@@ -222,6 +222,7 @@
     max-width: 600px;
     margin-right: 250px;
     margin-top: 7px;
+    line-height:25px;
 }
 
 .security {
@@ -242,21 +243,23 @@
 /* div device */
 
 .service-description {
-    height: 1090px;
     line-height: 1.292;
     border: 1px solid red;
     background-image: url(assets/images/grey_bg.jpg);
     background-position: 0px 255px;
     background-size: 100%;
     position: relative;
+    border: 1px solid blueviolet;
 }
 
 .service-description__quote {
     display: flex;
     flex-direction: column;
-    padding: 55px 0 0 400px;
+    padding: 0px 0 0 30px;
     width: 524px;
     font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
 }
 
 .service-description__quote > *{
@@ -268,18 +271,20 @@
     align-items: center;
     flex-direction: column;
     margin-top: 120px;
-    height: 200px;
+    height: 372px;
 }
 
 .service-description__title {
     padding-left: 80px;
     padding-bottom: 15px;
+    z-index: 2;
 }
 .service-description__text {
     max-width: 425px;
     text-align: right;
     line-height: 1.375;
     padding: 0;
+    z-index: 2;
 }
 
 .service-description__devices > div:first-child {
@@ -295,39 +300,54 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 70px;
+    height: 258px;
 }
 
 
-.donation :nth-child(1) {
+.donation > div:nth-child(1) {
     font-size: 36px;
 }
 
-.donation :nth-child(2) {
+.donation > div:nth-child(2) {
     font-size: 29px;
 }
 
 /* footer */
 
 .footer__menu {
+    height: 215px;
     display: flex;
     margin: 0 220px;
+    line-height: 1.5;
 }
 
 .partners {
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    align-items: flex-end;
+}
+
+.partners__logo {
+    margin-right: 361px;
+    width: 974px;
+    height: 92px;
+}
+
+.partners__info {
+    margin-right: 400px;
+    margin-top: 20px;
 }
 
 .emails {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-.links {
-    display: flex;
-}
 
-.footer__menu-item {
+.footer__company-info {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -337,7 +357,33 @@
     font-size: 18px;
 }
 
-.footer__menu-item ul {
+.footer__legal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+    min-width: 255px;
+    direction:rtl;
+    font-size: 18px;
+}
+
+.footer__neutron-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: right;
+    min-width: 200px;
+    direction:rtl;
+    font-size: 18px;
+}
+
+.footer__menu__information {
+    margin-left: 170px;
+}
+
+.footer__legal-info ul,
+.footer__company-info ul,
+.footer__neutron-info ul {
     padding-inline-start: 15px;
     font-size: 14px;
 }
@@ -373,26 +419,42 @@
 
 .donation__oval-buttons {
     display: flex;
+    min-width: 490px;
+    padding-top: 35px;
+    padding-left: 25px;
 }
 
 
 
 .donation__oval-button1{
+    margin-right: 51px;
     border-radius: 40px;
-    height: 60px;
+    padding: 15px 0 0 0px;
+    height: 40px;
     min-width: 250px;
     font-size: 18px;
     text-align: center;
     background: linear-gradient(to right, #636b92, #6d4a70);
+    color: #fff;
+    box-shadow: 0 0 20px  #636b92 ;
 }
 
 .donation__oval-button2 {
     border-radius: 40px;
-    height: 60px;
-    min-width: 250px;
+    padding: 15px 0 0 0px;
+    height: 40px;
+    min-width: 165px;
     font-size: 18px;
     text-align: center;
     background: linear-gradient(to right, #36bae1, #5e7bea);
+    color: #fff;
+    box-shadow: 0 0 20px  #36bae1 ;
+}
+
+.fa-cloud-upload-alt,
+.fa-dollar-sign {
+    margin-right: 5px;
+    font-size: 16px;
 }
 
 .authorization__log-in-oval-button {
@@ -414,7 +476,7 @@
 }
 
 .security__oval-button {
-    margin-top: 20px;
+    margin-top: 23px;
     /* padding-left: 100px; */
     width: 335px;
     height: 45px;
@@ -432,6 +494,7 @@
 .service-description__buttons {
     height: 250px;
     border: 1px solid red;
+    z-index: 2;
 }
 
 ul.navigation__language {
@@ -468,10 +531,11 @@ ul.navigation__language {
       height: 70px;
   }
 
-  @media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
+  @media only screen and (max-width: 1300px) {
+    /* .navigation__menu {
+      flex-direction: column;
+      align-content: center;
+    } */
   }
 
   .service-description__partners img {
@@ -480,11 +544,115 @@ ul.navigation__language {
   }
 
   .service-descripton__laptor-image {
-      position: absolute;
-      right: 270px;
-      top: 143px;
+    position: absolute;
+    right: 270px;
+    top: 143px;
+    z-index: 1;
   }
 
-  
+  .service__slider {
+    /* position: relative; */
+  }
 
+  .service-description__reviews {
+    padding: 55px 0 0 361px;
+    display: flex;
+  }
+  .service__slider div {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #ddd2c5;
+    margin: 10px 0;
+    display: block;
+}
+
+.service-description__app-store {
+    border-radius: 10px;
+    height: 60px;
+    min-width: 184px;
+    font-size: 18px;
+    text-align: center;
+    background: #000000;
+    padding-top: 16px;
+    color: #fff;
+    margin-right: 5px;
+    background-image: url(assets/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg);
+    background-size: 100%;
+}
+
+.service-description__google-play {
+    border-radius: 10px;
+    height: 60px;
+    min-width: 185px;
+    font-size: 18px;
+    text-align: center;
+    background: #000000;
+    padding-top: 16px;
+    color: #fff;
+    margin-right: 10px;
+    background-image: url(assets/images/googl.png);
+    background-size: 100%;
+}
+
+.service-description__buttons {
+    margin-top: 25px;
+    padding-left: 45px;
+}
+
+.footer__menu__information {
+    display: flex;
+}
+
+.footer__menu__information ul {
+    margin-top: 25px;
+    line-height: 23px;
+}
+
+.links {
+    display: flex;
+    font-size: 14px;
+    list-style-type: none;
+    padding-left: 0;
+    padding: 0 190px;
+}
+
+.links li {
+    padding-right: 10px;
+    margin-top: 15px;
+}
+
+ul.links {
+    /* padding: 10px 16px; */
+    list-style: none;
+    /* background-color: #eee; */
+  }
   
+  /* Display list items side by side */
+  ul.links li {
+    display: inline;
+  }
+  
+  /* Add a slash symbol (/) before/behind each list item */
+  ul.links li+li:before {
+    padding: 5px;
+    color: black;
+    content: "/\00a0";
+  }
+  
+  /* Add a color to all links inside the list */
+  ul.links li a {
+    color: #0275d8;
+    text-decoration: none;
+  }
+  
+  /* Add a color on mouse-over */
+  ul.links li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+  }
+
+  .footer__copyright {
+    padding: 0 190px;
+  }
+
