@@ -28,12 +28,22 @@
 
             </div>
             <ul class="navigation__menu">
-                <li>About</li>
-                <li>Security</li>
-                <li>Blog</li>
-                <li>Careers</li>
-                <li>Support</li>
-                <li>Donate</li>
+                <div class="menu__icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="menu__links">
+                    <li class="menu__links-item">About</li>
+                    <li class="menu__links-item">Security</li>
+                    <li class="menu__links-item">Blog</li>
+                    <li class="menu__links-item">Careers</li>
+                    <li class="menu__links-item">Support</li>
+                    <li class="menu__links-item">Donate</li>
+                </div>
+
             </ul>
             <div class="authorization">
                 <a class="link__dribbble" href="https://dribbble.com/" target="_blank"><i
@@ -44,6 +54,7 @@
         </nav>
     </header>
     <main>
+        <!-- <hr class="main__vertical-line-security" noshade style="height: 433px; width: 1px;"> -->
         <section class="about">
             <div class="about__info">
                 <div class="about__title">Secure Email Communication</div>
@@ -77,7 +88,9 @@
                     Switzerland. This means all user data is
                     protected by strict Swiss privacy laws.
                 </div>
+                <!-- <hr class="main__vertical-line-information" noshade style="height: 210px; width: 1px;"> -->
             </div>
+
 
             <div class="information__item item2">
                 <div class="item2__block">
@@ -117,11 +130,12 @@
         </section>
         <div class="service-description">
             <div class="service-description__partners">
-                <img src="assets/images/forbes__ettc.jpg" alt="">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <img src="assets/images/r1.png" alt="">
+                <img src="assets/images/r2.png" alt="">
+                <img src="assets/images/r3.png" alt="">
+                <img src="assets/images/r4.png" alt="">
+                <img src="assets/images/r5.png" alt="">
+                <img src="assets/images/r6.png" alt="">
             </div>
             <img class="service-descripton__laptor-image" src="assets/images/laptor.png" alt="laptor image">
             <div class="service-description__reviews">
@@ -169,7 +183,15 @@
     <footer>
         <div class="partners">
             <div class="partners__info">Those, who help us secure your privacy</div>
-            <img class="partners__logo" src="assets/images/secure-privacy.png" alt="list of privacy partners">
+            <div class="partners__logo">
+                <img src="assets/images/h1.png" alt="">
+                <img src="assets/images/h2.png" alt="">
+                <img src="assets/images/h3.png" alt="">
+                <img src="assets/images/h4.png" alt="">
+                <img src="assets/images/h5.png" alt="">
+                <img src="assets/images/h6.png" alt="">
+                <img src="assets/images/h7.png" alt="">
+            </div>
         </div>
         <nav class="footer__menu">
             <div class="footer__menu-emails">
@@ -217,6 +239,8 @@
             </div>
 
         </nav>
+        <!-- <hr class="footer__vertical-line" noshade style="height: 200px; width: 1px;"> -->
+
         <ul class="links">
             <li><a href="#">Facebook</a></li>
             <li><a href="#">Twitter</a></li>
@@ -227,5 +251,11 @@
         <div class="footer__copyright">© 2017 Neutron Technologies AG. All Rights Reserved.</div>
     </footer>
 </body>
+
+<script>
+    document.getElementsByClassName('menu__icon')[0].addEventListener('click', function () {
+        document.getElementsByClassName('navigation__menu')[0].classList.toggle('menu_state_open');
+    })
+</script>
 
 </html>
