@@ -210,6 +210,9 @@
 
 /* section */
 
+.links {
+    margin-top: 45px;
+}
 .security__title {
     margin-left: -35px;
     margin-top: -5px;
@@ -267,7 +270,7 @@
     align-items: center;
     flex-direction: column;
     margin-top: 120px;
-    margin-bottom: 221px;
+    margin-bottom: 230px;
     /* height: 372px; */
 }
 
@@ -395,6 +398,9 @@
     display: flex;
     padding: 70px 0 0 175px;
     font-size: 25px;
+    background-image: url(assets/images/fake-lake.png);
+    background-repeat: no-repeat;
+    background-position: 0px 85px;
 }
 
 .about__button {
