@@ -24,9 +24,14 @@
     margin-top: 15px;
 }
 
+.about__stores {
+    display: flex;
+    flex-direction: row;
+}
+
 .navigation {
     margin-left: 200px;
-    margin-right: 155px;
+    margin-right: 180px;
     margin-top: 85px;
 }
 
@@ -212,6 +217,7 @@
 
 .links {
     margin-top: 45px;
+    flex-wrap: wrap;
 }
 .security__title {
     margin-left: -35px;
@@ -353,7 +359,9 @@
     flex-direction: column;
     justify-content: end;
     text-align: right;
-    min-width: 300px;
+    margin-left: 170px;
+    max-width: 300px;
+    width: 100%;
     direction:rtl;
     font-size: 18px;
 }
@@ -363,7 +371,8 @@
     flex-direction: column;
     justify-content: end;
     text-align: right;
-    min-width: 255px;
+    max-width: 255px;
+    width: 100%;
     direction:rtl;
     font-size: 18px;
 }
@@ -373,13 +382,14 @@
     flex-direction: column;
     justify-content: end;
     text-align: right;
-    min-width: 200px;
+    max-width: 200px;
+    width: 100%;
     direction:rtl;
     font-size: 18px;
 }
 
 .footer__menu__information {
-    margin-left: 170px;
+    width: 100%
 }
 
 .footer__legal-info ul,
@@ -394,7 +404,7 @@
     padding:  0  0 5px 0;
 }
 
-.about__buttoms {
+.about__buttons {
     display: flex;
     padding: 70px 0 0 175px;
     font-size: 25px;
@@ -461,9 +471,8 @@
     font-size: 16px;
 }
 
-.authorization__log-in-oval-button {
-    margin-left: 25px;
-    padding-top: 7px;
+.authorization__sign-up {
+    padding: 10px 21px;
     border-radius: 40px;
     height: 35px;
     width: 90px;
@@ -476,7 +485,7 @@
 }
 
 .authorization__log-in {
-    padding-right: 25px;
+    margin-left: 40px;
 }
 
 .security__oval-button {
@@ -489,7 +498,7 @@
     background: #fff;
     border: 0.5px solid #b9b9b9;
     text-align: center;
-    margin-left: 480px;
+    margin-left: auto;
     color: rgb(0, 0, 0);
     /* text-align: center; */
     padding: 18px 0 0 0;
@@ -539,6 +548,9 @@ ul.navigation__language {
   }
 
   .service-description__partners {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
     margin-left: 20px;
   }
 
@@ -547,10 +559,6 @@ ul.navigation__language {
     right: 270px;
     top: 143px;
     z-index: 1;
-  }
-
-  .service__slider {
-    /* position: relative; */
   }
 
   .service-description__reviews {
@@ -755,6 +763,14 @@ ul.links {
     z-index: 1000;
     overflow: auto;
   }
+
+  .navigation__menu {
+      margin-left: auto;
+  }
+
+  .authorization {
+      margin-left: auto;
+  }
   
   .menu__links-item {
     display: block;
@@ -765,6 +781,14 @@ ul.links {
 
   .footer__menu {
       margin: 0 auto;
+      margin-left: 60px;
+  }
+  .footer__company-info {
+      margin-left: 0;
+  }
+
+  .navigation {
+      margin-right: 60px;
       margin-left: 60px;
   }
 }
@@ -786,13 +810,15 @@ ul.links {
     .emails {
         min-width: 260px;
     }
+
+    .about__buttons { 
+        padding: 0;
+        justify-content: center;
+        margin-top: 70px;
+    }
 }
 
 @media screen and (max-width: 1400px) {
-    .footer__menu {
-        flex-direction: column-reverse;
-    }
-
     .footer__menu-emails {
         display: flex;
         flex-direction: column;
@@ -820,4 +846,220 @@ ul.links {
     .service-descripton__laptor-image {
         right: 5px;
     }
+
+    .item1__text,
+    .item2__text,
+    .item3__text {
+        padding: 15px 65px 0 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+.footer__menu {
+    flex-direction: column-reverse;
+}
+.navigation {
+    margin-left: 60px;
+}
+.about__title {
+    margin-right: 60px;
+}
+.service-descripton__laptor-image {
+    display: none;
+}
+.service-description__reviews {
+    margin-right: 60px;
+}
+.security__info {
+    margin-left: 30px;
+}
+
+.partners__logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.service-description__partners {
+    justify-content: center;
+}
+
+.footer__company-info {
+    margin-left:  0;
+    margin-right: 60px;
+}
+
+}
+
+.security__oval-button-container {
+    width: 100%;
+    max-width: 820px;
+}
+
+@media screen and (max-width: 1400px) {
+    .footer__company-info,
+    .footer__legal-info,
+    .footer__neutron-info {
+        width: initial;
+        max-width: initial;
+        margin-right: 60px;
+    }
+    .footer__menu__information {
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+   .service-description__reviews,
+   .donation {
+       padding: 0;
+       margin: 20px 60px;
+   }
+
+   .donation {
+       text-align: center;
+   }
+
+   .service-description__devices {
+       margin-bottom: 100px;
+   }
+
+   .security__info {
+       margin-right: 60px;
+   }
+
+   .partners__info { 
+       margin-right: 60px;
+   }
+}
+
+@media screen and (max-width: 540px) {
+    .about__title,
+    .security__title { 
+        font-size: 36px;
+    }
+
+    .donation > div:nth-child(1) {
+        font-size: 36px;
+    }
+
+    .about__title {
+        margin-right: 0;
+    }
+
+    .navigation__menu {
+        margin-right: 15px;
+    }
+
+    .about__info {
+        font-size: 26px;
+    }
+
+    .link, 
+    .security__info,
+    .donation > div:nth-child(2){
+        font-size: 16px;
+    }
+
+    .donation > div:nth-child(1),
+    .donation > div:nth-child(2){
+        /* min-width: 370px; */
+        text-align: end;
+        margin: 0 20px;
+    }
+        
+
+    .link {
+        right: 15px;
+        top: 280px;
+    }
+
+    .about__stores {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .about__buttons {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about__oval-button {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .navigation {
+        margin: 40px 0 0 20px;
+    }
+
+    .security__oval-button {
+        width: 250px;
+    }
+
+    .donation__oval-buttons {
+        flex-direction: column;
+        justify-content: center;
+        min-width: initial;
+    }
+
+    .donation__oval-button1,
+    .donation__oval-button2 {
+        margin: 10px 0;
+        width: 255px;
+    }
+
+    .partners,
+    .information {
+        margin-bottom: 70px;
+    }
+
+    .information {
+        margin-left: 20px;
+    }
+
+    .service-description__devices {
+        margin-right: 20px;
+    }
+
+    .service-description__title {
+        padding-left: 70px;
+    }
+
+    .service-description__buttons {
+        text-align: center;
+    }
+
+    .footer__menu__information {
+        flex-wrap: wrap;
+        margin: 0 20px;
+    }
+
+    .footer__menu {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .navigation__language {
+        display: none;
+    }
+
+    .link,
+    .security__oval-button {
+        display: none;
+    }
+
+    .security__title {
+        margin-left: 10px;
+    }
+
+    .security__info,
+    .donation > div:nth-child(2) {
+        margin: 10px 10px;
+    }
+
 }
