@@ -74,8 +74,6 @@
 }
 
 
-/* header */
-
 .about {
     display: flex;
     justify-content: center;
@@ -124,96 +122,90 @@
     margin-bottom: 13px;
 }
  
-/* article  */
-
 .information {
     display: flex;
     padding: 40px 42px 0 170px;
     justify-content: center;
     margin-bottom: 115px;
-    /* height: 300px; */
 }
 
 .information__item {
     width: 430px;
-    /* max-width: 340px; */
 }
 
-.item1,
-.item2,
-.item3 {
+.privacy,
+.encryption,
+.anonymous-email {
     display: flex;
     flex-direction: column;
 }
 
-.item1__block,
-.item2__block,
-.item3__block {
+.privacy__block,
+.encryption__block,
+.anonymous-email__block {
     display: flex;   
 }
 
-.item1__block {
+.privacy__block {
     margin-left: -10px;
 }
 
-.item2__block {
+.encryption__block {
     margin-left: 10px;
 }
 
-.item3__block {
+.anonymous-email__block {
     margin-left: 10px;
     margin-top: 5px;
 }
 
-.item1__text,
-.item2__text,
-.item3__text {
+.privacy__text,
+.encryption__text,
+.anonymous-email__text {
     line-height: 1.571;
 }
 
-.item1__text {
+.privacy__text {
     padding: 15px 70px 0 0;
 }
 
-.item2__text {
+.encryption__text {
     padding: 15px 65px 0 15px;
 }
 
-.item3__text {
+.anonymous-email__text {
     padding-top: 10px;
     padding-left: 20px;
 }
 
-.item2-logo__logo {
+.encryption-logo__logo {
     margin-left: -8px;
 }
 
-.item1-logo__title {
+.privacy-logo__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 7px;
 }
 
-.item2-logo__title {
+.encryption-logo__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.item1-logo__title :nth-child(1),
-.item2-logo__title :nth-child(1),
-.item3-logo__title :nth-child(1) {
+.privacy-logo__title :nth-child(1),
+.encryption-logo__title :nth-child(1),
+.anonymous-email-logo__title :nth-child(1) {
     font-size: 30px;
 }
 
-.item1-logo__title :nth-child(2),
-.item2-logo__title :nth-child(2),
-.item3-logo__title :nth-child(2) {
+.privacy-logo__title :nth-child(2),
+.encryption-logo__title :nth-child(2),
+.anonymous-email-logo__title :nth-child(2) {
     font-size: 18px;
 }
-
-/* section */
 
 .links {
     margin-top: 45px;
@@ -277,7 +269,6 @@
     flex-direction: column;
     margin-top: 120px;
     margin-bottom: 230px;
-    /* height: 372px; */
 }
 
 .service-description__title {
@@ -301,14 +292,12 @@
     font-size: 16px;
 }
 
-/* donation */
 .donation {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 70px;
     margin-bottom: 85px;
-    /* height: 258px; */
 }
 
 
@@ -319,8 +308,6 @@
 .donation > div:nth-child(2) {
     font-size: 29px;
 }
-
-/* footer */
 
 .footer__menu {
     margin-bottom: 45px;
@@ -490,7 +477,6 @@
 
 .security__oval-button {
     margin-top: 23px;
-    /* padding-left: 100px; */
     width: 335px;
     height: 45px;
     border-radius: 40px;
@@ -500,7 +486,6 @@
     text-align: center;
     margin-left: auto;
     color: rgb(0, 0, 0);
-    /* text-align: center; */
     padding: 18px 0 0 0;
 }
 
@@ -509,37 +494,28 @@
 }
 
 ul.navigation__language {
-    /* padding: 10px 16px; */
     list-style: none;
-    /* background-color: #eee; */
   }
   
-  /* Display list items side by side */
   ul.navigation__language li {
     display: inline;
   }
   
-  /* Add a slash symbol (/) before/behind each list item */
   ul.navigation__language li+li:before {
     padding: 5px;
     color: black;
     content: "/\00a0";
   }
   
-  /* Add a color to all links inside the list */
   ul.navigation__language li a {
     color: #0275d8;
     text-decoration: none;
   }
   
-  /* Add a color on mouse-over */
+
   ul.navigation__language li a:hover {
     color: #01447e;
     text-decoration: underline;
-  }
-
-  .menu__logo {
-      /* height: 70px; */
   }
 
   .service-description__partners img {
@@ -635,30 +611,24 @@ ul.navigation__language {
 }
 
 ul.links {
-    /* padding: 10px 16px; */
     list-style: none;
-    /* background-color: #eee; */
   }
   
-  /* Display list items side by side */
   ul.links li {
     display: inline;
   }
   
-  /* Add a slash symbol (/) before/behind each list item */
   ul.links li+li:before {
     padding: 5px;
     color: black;
     content: "/\00a0";
   }
   
-  /* Add a color to all links inside the list */
   ul.links li a {
     color: #0275d8;
     text-decoration: none;
   }
   
-  /* Add a color on mouse-over */
   ul.links li a:hover {
     color: #01447e;
     text-decoration: underline;
@@ -668,15 +638,6 @@ ul.links {
     padding: 0 190px;
   }
 
-  
-  @media only screen and (max-width: 1594px) {
-    /* .navigation__menu {
-      flex-direction: column;
-      align-content: center;
-    } */
-  }
-
-  EDIT ON
  .navigation__menu {
     text-align: right;
 }
@@ -795,7 +756,6 @@ ul.links {
 
 .main__vertical-line-information {
     position: absolute;
-    /* position: relative; */
 }
 
 @media screen and (max-width: 1799px) {
@@ -847,9 +807,9 @@ ul.links {
         right: 5px;
     }
 
-    .item1__text,
-    .item2__text,
-    .item3__text {
+    .privacy__text,
+    .encryption__text,
+    .anonymous-email__text {
         padding: 15px 65px 0 15px;
     }
 }
@@ -965,7 +925,6 @@ ul.links {
 
     .donation > div:nth-child(1),
     .donation > div:nth-child(2){
-        /* min-width: 370px; */
         text-align: end;
         margin: 0 20px;
     }
@@ -1017,11 +976,8 @@ ul.links {
         margin-bottom: 70px;
     }
 
+    .service-description__devices,
     .information {
-        margin-left: 20px;
-    }
-
-    .service-description__devices {
         margin-right: 20px;
     }
 
