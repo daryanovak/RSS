@@ -7,12 +7,14 @@ var prevColor = document.getElementsByClassName('pallete__colors-option__prev-co
 colorPicker[0].onclick = function (e) {
     var event = e || window.event,
         target = event.CurrentTarget || event.srcElement;
-    let prevColor = "#000"
     if (target.tagName == 'DIV') {
-        const style = getComputedStyle(target)
-        const backgroundColor = style.backgroundColor
-        alert(backgroundColor);
-        currentColor[0].style.backgroundColor = backgroundColor;
+        var cur = getComputedStyle(currenttColor[0]);
+        let bgColor = cur.backgroundColor;
+        alert(bgColor);
+        const getColorFromPicker = getComputedStyle(target)
+        const colorFromPicker = getColorFromPicker.backgroundColor;
+        currentColor[0].style.backgroundColor = colorFromPicker;
+        prevColor[0].style.backgroundColor = bgColor;
     }
 };
 
@@ -27,6 +29,5 @@ canvasArea[0].onclick = function (e) {
         var style = getComputedStyle(currenttColor[0]);
         let bgColor = style.backgroundColor;
         target.style.backgroundColor = bgColor;
-        alert("jw");
     }
 };
