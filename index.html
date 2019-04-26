@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body>
+    <main>
+        <div class="pallete">
+            <div class="palette__tools">
+                <div class="palete__option">
+                    <button><i class="fas fa-fill-drip"></i>Paint bucket</button>
+                    <button><i class="fas fa-eye-dropper"></i>Choose color</button>
+                    <button><i class="fas fa-expand-arrows-alt"></i>Move</button>
+                    <button class="pallete__tools__transform-button"><i
+                            class="fas fa-exchange-alt"></i>Transform</button>
+                </div>
+                <div class="pallete__colors-option">
+                    <button class="pallete__colors-option__current">
+                        <div class="pallete__colors-option__current-color"></div>
+                        Current color
+                    </button>
+                    <button class="pallete__colors-option__prev">
+                        <div class="pallete__colors-option__prev-color"></div>
+                        Prev color
+                    </button>
+                    <button>
+                        <div></div>red
+                    </button>
+                    <button>
+                        <div></div>blue
+                    </button>
+                </div>
+            </div>
+            <div id="bagua-table" class="palette__canvas-area">
+                <canvas  class="palette__canvas-area__canvas1" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas2" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas3" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas4" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas5" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas6" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas7" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas8" id="myCanvas"></canvas>
+                <canvas class="palette__canvas-area__canvas9" id="myCanvas"></canvas>
+            </div>
+        </div>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
