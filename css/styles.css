@@ -8,14 +8,14 @@
     font-family: "Myriad Pro";
 }
 
-.palette__canvas-area > canvas {
+.pallete__canvas-area > canvas {
     width: 200px;
     height: 200px;
     border: 1px solid gray;
     margin: 10px 5px; 
 }
 
-.palette__canvas-area {
+.pallete__canvas-area {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -27,21 +27,21 @@
     flex-direction: row;
 }
 
-.palette__tools {
+.pallete__tools {
     /* background-color: gray; */
     min-width: 40%;
     margin-top: 25px;
 }
 
-.palette__canvas-area {
+.pallete__canvas-area {
     margin-top: 20px;
 }
 
-.palete__option i {
+.pallete__option i {
     margin-right: 15px;
 }
 
-.palete__option button,
+.pallete__option button,
 .pallete__colors-option button {
     display: flex;
     border: 0;
@@ -53,13 +53,14 @@
 }
 
 .pallete__colors-option,
-.palete__option {
+.pallete__option,
+.pallete__color-picker {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); 
     max-width: 250px;
 }
 
 .pallete__colors-option {
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 .pallete__colors-option div {
@@ -69,4 +70,43 @@
     background-color: rebeccapurple;
     border-radius: 50%;
     margin-right: 15px;
+}
+
+.pallete__color-picker {
+    /* height: 100px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pallete__color-picker div {
+    height: 40px;
+    width: 40px;
+    margin: 10px 10px;
+}
+
+.pallete__color-picker__red {
+    background-color: #fc0808;
+}
+
+.pallete__color-picker__yellow {
+    background-color: #fcfc08;
+}
+
+.pallete__color-picker__blue {
+    background-color: #08fcfc;
+}
+
+.pallete__color-picker__green {
+    background-color: #08fc25;
+}
+
+.pallete__color-picker__pink {
+    background-color: #fc08ae;
+}
+
+.pallete__color-picker__black {
+    background-color: #000000;
 }
