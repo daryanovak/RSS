@@ -1,19 +1,25 @@
-var menu = document.getElementsByClassName('pallete__option');
+var menu = document.getElementsByClassName('pallete__option')[0];
 let currentToolCallback;
 
 
-menu[0].addEventListener('click', function (e) {
+menu.addEventListener('click', function (e) {
+    
     if (e.target.classList.contains("pallete__tools__paint-bucket")) {
+        var colorPicker = document.getElementsByClassName('pallete__color-picker')[0];
         var canvasArea = document.getElementsByClassName('pallete__canvas-area')[0];
-        var currentColor = document.getElementsByClassName('pallete__colors-option__current-color');
-
+        var currentColor = document.getElementsByClassName('pallete__colors-option__current-color')[0];
+        
         canvasArea.removeEventListener('click', currentToolCallback);
+        canvasArea.removeEventListener("mousedown", currentToolCallback);
+        colorPicker.removeEventListener('click', currentToolCallback);
+
+        
 
         currentToolCallback = function (e) {
             var event = e || window.event,
                 target = event.CurrentTarget || event.srcElement;
             if (target.tagName == 'CANVAS') {
-                var style = getComputedStyle(currentColor[0]);
+                var style = getComputedStyle(currentColor);
                 let bgColor = style.backgroundColor;
                 target.style.backgroundColor = bgColor;
             }
@@ -25,12 +31,14 @@ menu[0].addEventListener('click', function (e) {
 
     if (e.target.classList.contains("pallete__tools__choose-color")) {
         var colorPicker = document.getElementsByClassName('pallete__color-picker')[0];
-        // var canvasArea = document.getElementsByClassName('pallete__canvas-area')[0];
+        var canvasArea = document.getElementsByClassName('pallete__canvas-area')[0];
 
-        // canvasArea.removeEventListener('click', currentToolCallback);
-        // colorPicker.removeEventListener('click', currentToolCallback);
+        canvasArea.removeEventListener('click', currentToolCallback);
+        canvasArea.removeEventListener("mousedown", currentToolCallback);
+        
         var currentColor = document.getElementsByClassName('pallete__colors-option__current-color')[0];
         var prevColor = document.getElementsByClassName('pallete__colors-option__prev-color')[0];
+       
         currentToolCallback = function (e) {
             var event = e || window.event,
                 target = event.CurrentTarget || event.srcElement;
@@ -93,6 +101,7 @@ menu[0].addEventListener('click', function (e) {
 
     if (e.target.classList.contains("pallete__tools__transform-button")) {
         var canvasArea = document.getElementsByClassName('pallete__canvas-area')[0];
+        
         canvasArea.removeEventListener('click', currentToolCallback);
         canvasArea.removeEventListener('mousedown', currentToolCallback);
 
