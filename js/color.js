@@ -10,7 +10,6 @@ colorPicker[0].onclick = function (e) {
     if (target.tagName == 'DIV') {
         var cur = getComputedStyle(currenttColor[0]);
         let bgColor = cur.backgroundColor;
-        alert(bgColor);
         const getColorFromPicker = getComputedStyle(target)
         const colorFromPicker = getColorFromPicker.backgroundColor;
         currentColor[0].style.backgroundColor = colorFromPicker;
@@ -19,15 +18,4 @@ colorPicker[0].onclick = function (e) {
 };
 
 //color bucket 
-var canvasArea = document.getElementsByClassName('pallete__canvas-area');
-var currenttColor = document.getElementsByClassName('pallete__colors-option__current-color');
 
-canvasArea[0].onclick = function (e) {
-    var event = e || window.event,
-        target = event.CurrentTarget || event.srcElement;
-    if (target.tagName == 'CANVAS') {
-        var style = getComputedStyle(currenttColor[0]);
-        let bgColor = style.backgroundColor;
-        target.style.backgroundColor = bgColor;
-    }
-};
