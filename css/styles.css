@@ -113,3 +113,8 @@
 .pallete__color-picker__black {
     background-color: #000000;
 }
+
+.pallete__color-canvas-picker {
+    margin-left: 20px;
+    margin-top: 20px;
+}
