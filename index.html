@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -22,6 +23,7 @@
                     <button class="pallete__tools__transform-button"><i
                             class="fas fa-exchange-alt"></i>Transform</button>
                 </div>
+            
                 <div class="pallete__colors-option">
                     <button class="pallete__colors-option__current">
                         <div class="pallete__colors-option__current-color"></div>
@@ -38,33 +40,13 @@
                         <div></div>blue
                     </button>
                 </div>
-                <!-- <div class="pallete__color-picker">
-                    <div class="pallete__color-picker__red"></div>
-                    <div class="pallete__color-picker__yellow"></div>
-                    <div class="pallete__color-picker__blue"></div>
-                    <div class="pallete__color-picker__green"></div>
-                    <div class="pallete__color-picker__pink"></div>
-                    <div class="pallete__color-picker__black"></div>
-                </div> -->
                 <canvas class="pallete__color-canvas-picker" width="150" height="150"></canvas>
             </div>
             <div id="area" class="pallete__canvas-area">
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
-                <canvas class="pallete__canvas-area__canvas" id="myCanvas"></canvas>
             </div>
         </div>
     </main>
-    <!-- <script src="js/script.js"></script> -->
-    <!-- <script src="js/color.js"></script> -->
-    <!-- <script src="js/drag.js"></script> -->
-    <script src="js/menu.js"></script>
+    <script type="module" src="js/menu.mjs"></script>
 </body>
 
 </html>

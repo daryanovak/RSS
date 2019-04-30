@@ -1,7 +1,6 @@
-@import url(css/normalize.css);
 @font-face {
     font-family: 'Myriad Pro';
-    src: url(assets/fonts/MyriadPro-Regular.woff) format('woff'), url(assets/fonts/MyriadPro-Regular.ttf) format('truetype');
+    src: url(/assets/fonts/MyriadPro-Regular.woff) format('woff'), url(/assets/fonts/MyriadPro-Regular.ttf) format('truetype');
 }
 
 * {
