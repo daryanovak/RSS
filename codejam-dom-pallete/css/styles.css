@@ -1,0 +1,119 @@
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url(/assets/fonts/MyriadPro-Regular.woff) format('woff'), url(/assets/fonts/MyriadPro-Regular.ttf) format('truetype');
+}
+
+* {
+    font-family: "Myriad Pro";
+}
+
+.pallete__canvas-area > canvas {
+    width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    margin: 10px 5px; 
+}
+
+.pallete__canvas-area {
+    /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+
+.pallete {
+    display: flex;
+    flex-direction: row;
+}
+
+.pallete__tools {
+    /* background-color: gray; */
+    min-width: 40%;
+    margin-top: 25px;
+}
+
+.pallete__canvas-area {
+    margin-top: 20px;
+}
+
+.pallete__option i {
+    margin-right: 15px;
+}
+
+.pallete__option button,
+.pallete__colors-option button {
+    display: flex;
+    border: 0;
+    background-color: white;
+    height: 50px;
+    width: 200px;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+
+.pallete__colors-option,
+.pallete__option,
+.pallete__color-picker {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    max-width: 250px;
+}
+
+.pallete__colors-option {
+    margin-top: 20px;
+}
+
+.pallete__colors-option div {
+    border: 1 solid red;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* .pallete__colors-option__prev-color {
+    background-color: chartreuse;
+} */
+
+.pallete__color-picker {
+    /* height: 100px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pallete__color-picker div {
+    height: 40px;
+    width: 40px;
+    margin: 10px 10px;
+}
+
+.pallete__color-picker__red {
+    background-color: #fc0808;
+}
+
+.pallete__color-picker__yellow {
+    background-color: #fcfc08;
+}
+
+.pallete__color-picker__blue {
+    background-color: #08fcfc;
+}
+
+.pallete__color-picker__green {
+    background-color: #08fc25;
+}
+
+.pallete__color-picker__pink {
+    background-color: #fc08ae;
+}
+
+.pallete__color-picker__black {
+    background-color: #000000;
+}
+
+.pallete__color-canvas-picker {
+    margin-left: 20px;
+    margin-top: 20px;
+}
