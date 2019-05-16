@@ -1,30 +1,72 @@
+async function getJson(url) {
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}
+
+const query = 'KJ Apa';
+const key = 'AIzaSyDQguvc5lVX5uZ8JknvUxfcRE7VVO3BiLA';
+
+const channelInfo = {
+  url: `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&maxResults=15&q=${query}`,
+};
+
+function getVideoInfoURL(ids) {
+  const urlPrefix = `https://www.googleapis.com/youtube/v3/videos?key=${key}&id=`;
+  const urlPostfix = '&part=snippet,statistics';
+
+  return `${urlPrefix}${ids}${urlPostfix}`;
+}
+
 export default class AppModel {
-  constructor(state1) {
-    this.state1 = state1;
+  constructor() {
+    this.channelInfo = channelInfo;
   }
 
-  static extractClipInfo(data) {
+  static extractClipInfo(channelData, videoData) {
     // console.log(data);
-    const clipiInfo = data.items.map(clip => ({
-      title: clip.snippet.title,
-      description: clip.snippet.description,
-      data: clip.snippet.publishedAt.substr(0, 10),
-      author: clip.snippet.channelTitle,
-      image: clip.snippet.thumbnails.high.url,
-    }));
+    // const channelClipInfo = channelData.items.map(clip => ({
+    //   title: clip.snippet.title,
+    //   description: clip.snippet.description,
+    //   data: clip.snippet.publishedAt.substr(0, 10),
+    //   author: clip.snippet.channelTitle,
+    //   image: clip.snippet.thumbnails.high.url,
+    // }));
+    console.log(channelData);
+    console.log(videoData);
+    const clipsObjects = [];
+    for (let i = 0; i < channelData.items.length; i += 1) {
+      const clip = channelData.items[i];
+      const video = videoData.items[i];
+      clipsObjects.push({
+        title: clip.snippet.title,
+        description: clip.snippet.description,
+        data: clip.snippet.publishedAt.substr(0, 10),
+        author: clip.snippet.channelTitle,
+        image: clip.snippet.thumbnails.high.url,
+        viewCount: video.statistics.viewCount,
+        link: `https://www.youtube.com/watch?v=${clip.id.videoId}`,
+      });
+    }
+
     // console.log(typeof data.items);
-    console.log(clipiInfo);
-    return clipiInfo;
+    console.log(clipsObjects);
+    return clipsObjects;
   }
 
 
   async getClipInfo() {
-    const { url } = this.state1;
+    const channelInfoURL = this.channelInfo.url;//
+    const channelData = await getJson(channelInfoURL);
 
-    const responce = await fetch(url);
-    const data = await responce.json();
-    console.log(data);
+    const ids = channelData.items
+      .map(info => info.id.videoId)
+      .reduce((acc, curr) => `${acc},${curr}`);
+    const videoInfoURL = getVideoInfoURL(ids);
+    const videoData = await getJson(videoInfoURL);
 
-    return AppModel.extractClipInfo(data);
+    // console.log(data);
+
+    return AppModel.extractClipInfo(channelData, videoData);
   }
 }
