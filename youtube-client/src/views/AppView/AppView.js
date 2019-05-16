@@ -1,17 +1,19 @@
+/* eslint-disable class-methods-use-this */
+import AppModel from '../../models/AppModel';
+
 export default class AppView {
-  constructor(arrDataObject) {
-    this.arrDataObject = arrDataObject;
+  constructor(data) {
+    this.data = data;
+    this.model = new AppModel();
+    this.state = { input: '' };
   }
 
-  render() {
-    const input = document.createElement('input');
-    document.body.appendChild(input);
-    input.addEventListener('input', (event) => {
-      event.target.value;
-    });
-    const contentCard = document.createElement('div');
-    contentCard.classList.add('card-container');
-    contentCard.innerHTML = this.arrDataObject.map(clipObject => `
+  clearBody() {
+    document.body.innerHTML = '';
+  }
+
+  renderCards() {
+    return this.data.map(clipObject => `
     <div class='card'>
       <a class='title' href=${clipObject.link}><img  class='image' src=${clipObject.image} style="border:none;" />
       <a class='title' href=${clipObject.link}>${clipObject.title}</a>
@@ -21,8 +23,36 @@ export default class AppView {
       <div class='view-count'>${clipObject.viewCount}</div>
     </div>
     `).join('');
-  // eslint-disable-next-line max-len  <image class='image' src=${clipObject.image}>${clipObject.data}</image>
-    // contentCard.innerHTML = this.arrDataObject.map(clipObject => `<div class='description'>${clipObject.description}</div>`).join('');
+  }
+
+  render() {
+    const input = document.createElement('input');
+    const contentCard = document.createElement('div');
+    const prevButton = document.createElement('button');
+    prevButton.innerHTML = 'prev';
+    const nextButton = document.createElement('button');
+    nextButton.innerHTML = 'next';
+    contentCard.classList.add('card-container');
+    document.body.appendChild(input);
+    document.body.appendChild(prevButton);
+    document.body.appendChild(nextButton);
     document.body.appendChild(contentCard);
+    input.addEventListener('keydown', async (event) => {
+      if (event.keyCode === 13) {
+        this.state.input = event.target.value;
+        this.data = await this.model.getClipInfo(this.state.input);
+        contentCard.innerHTML = this.renderCards();
+      }
+    });
+    prevButton.addEventListener('click', async () => {
+      this.model.setState({ currentPageToken: this.model.state.prevPageToken });
+      this.data = await this.model.getClipInfo(this.state.input);
+      contentCard.innerHTML = this.renderCards();
+    });
+    nextButton.addEventListener('click', async () => {
+      this.model.setState({ currentPageToken: this.model.state.nextPageToken });
+      this.data = await this.model.getClipInfo(this.state.input);
+      contentCard.innerHTML = this.renderCards();
+    });
   }
 }

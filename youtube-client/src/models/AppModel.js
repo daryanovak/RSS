@@ -1,15 +1,14 @@
+import setState from '../helpers';
+
+/* eslint-disable class-methods-use-this */
 async function getJson(url) {
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
 
-const query = 'KJ Apa';
-const key = 'AIzaSyDQguvc5lVX5uZ8JknvUxfcRE7VVO3BiLA';
+const key = 'AIzaSyBigxZnwbcB3_Ih6ikcxUXP3InOiDAsOoU';
 
-const channelInfo = {
-  url: `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&maxResults=15&q=${query}`,
-};
 
 function getVideoInfoURL(ids) {
   const urlPrefix = `https://www.googleapis.com/youtube/v3/videos?key=${key}&id=`;
@@ -20,8 +19,19 @@ function getVideoInfoURL(ids) {
 
 export default class AppModel {
   constructor() {
-    this.channelInfo = channelInfo;
+    this.setState = setState.bind(this);
+    this.state = {
+      nextPageToken: '',
+      prevPageToken: '',
+      currentPageToken: '',
+    };
   }
+
+  setCurrentPageToken(pageToken) {
+    this.setState({ currentPageToken: pageToken });
+  }
+
+  getSearchUrl(query) { return `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&pageToken=${this.state.currentPageToken || ''}&maxResults=15&q=${query || ''}`; }
 
   static extractClipInfo(channelData, videoData) {
     // console.log(data);
@@ -55,9 +65,13 @@ export default class AppModel {
   }
 
 
-  async getClipInfo() {
-    const channelInfoURL = this.channelInfo.url;//
-    const channelData = await getJson(channelInfoURL);
+  async getClipInfo(query) {
+    const channelInfoURL = this.getSearchUrl(query);//
+    const { nextPageToken, prevPageToken, ...channelData } = await getJson(channelInfoURL);
+    this.setState({
+      nextPageToken,
+      prevPageToken,
+    });
 
     const ids = channelData.items
       .map(info => info.id.videoId)
