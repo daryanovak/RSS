@@ -15,7 +15,7 @@ export default class AppView {
   renderCards() {
     return this.data.map(clipObject => `
     <div class='card'>
-      <a class='title' href=${clipObject.link}><img  class='image' src=${clipObject.image} style="border:none;" />
+      <img  class='image' src=${clipObject.image} style="border:none;" />
       <a class='title' href=${clipObject.link}>${clipObject.title}</a>
       <div class='description'>${clipObject.description}</div>
       <div class='author'>${clipObject.author}</div>

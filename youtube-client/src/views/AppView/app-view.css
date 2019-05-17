@@ -1,11 +1,19 @@
 .card-container {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .description {
   background-color: brown;
+  height: 100px;
 }
+
+.title {
+  vertical-align: middle;
+  height: 70px;
+}
+
 .author {
   background-color: greenyellow;
 }
@@ -17,5 +25,8 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   flex-basis: 250px;
+  text-align: center;
+  flex-wrap: wrap;
 }
