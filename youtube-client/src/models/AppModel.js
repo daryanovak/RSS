@@ -6,7 +6,7 @@ async function getJson(url) {
   return data;
 }
 
-const key = 'AIzaSyCTWC75i70moJLzyNh3tt4jzCljZcRkU8Y';
+const key = 'AIzaSyCvLbn_UBYig6dqgj9NJE6cAnjSFmkV69E';
 
 
 function getVideoInfoURL(ids) {
@@ -30,7 +30,7 @@ export default class AppModel {
     this.setState({ currentPageToken: pageToken });
   }
 
-  getSearchUrl(query, countClip) { return `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&pageToken=${this.state.currentPageToken || ''}&maxResults=${countClip}&q=${query || ''}`; }
+  getSearchUrl(query) { return `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&pageToken=${this.state.currentPageToken || ''}&maxResults=15&q=${query || ''}`; }
 
   static extractClipInfo(channelData, videoData) {
     const clipsObjects = [];
@@ -52,7 +52,7 @@ export default class AppModel {
 
 
   async getClipInfo(query) {
-    const channelInfoURL = this.getSearchUrl(query);//
+    const channelInfoURL = this.getSearchUrl(query);
     const { nextPageToken, prevPageToken, ...channelData } = await getJson(channelInfoURL);
     this.setState({
       nextPageToken,

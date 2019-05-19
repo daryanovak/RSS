@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import AppModel from '../../models/AppModel';
 
 export default class AppView {
@@ -9,10 +8,6 @@ export default class AppView {
       input: '',
       currentPage: 1,
     };
-  }
-
-  clearBody() {
-    document.body.innerHTML = '';
   }
 
   renderCards() {
@@ -92,6 +87,7 @@ export default class AppView {
       isDown = true;
       slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
+      // eslint-disable-next-line prefer-destructuring
       scrollLeft = slider.scrollLeft;
     });
     slider.addEventListener('mouseleave', () => {
