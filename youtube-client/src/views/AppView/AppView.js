@@ -84,19 +84,14 @@ export default class AppView {
 
     const slider = document.querySelector('.card-container');
 
-
-    // eslint-disable-next-line no-unused-vars
     let isDown = false;
-    // eslint-disable-next-line no-unused-vars
     let startX;
-    // eslint-disable-next-line no-unused-vars
     let scrollLeft;
 
     slider.addEventListener('mousedown', (e) => {
       isDown = true;
       slider.classList.add('active');
       startX = e.pageX - slider.offsetLeft;
-      // eslint-disable-next-line prefer-destructuring
       scrollLeft = slider.scrollLeft;
     });
     slider.addEventListener('mouseleave', () => {
