@@ -31,7 +31,7 @@ export default class AppModel {
     this.setState({ currentPageToken: pageToken });
   }
 
-  getSearchUrl(query) { return `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&pageToken=${this.state.currentPageToken || ''}&maxResults=3&q=${query || ''}`; }
+  getSearchUrl(query) { return `https://www.googleapis.com/youtube/v3/search?key=${key}&type=video&part=snippet&pageToken=${this.state.currentPageToken || ''}&maxResults=15&q=${query || ''}`; }
 
   static extractClipInfo(channelData, videoData) {
     // console.log(data);

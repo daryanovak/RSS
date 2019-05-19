@@ -1,52 +1,60 @@
 body {
   background-color: #e9e9e9;
 }
-.card-container {
+
+
+.info-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 35px;
-  font-size: 15px;
-}
-
-.description {
-  height: 100px;
-  padding: 0 10px 0;
-}
-
-.author {
-  margin-top: -60px;
+  flex-direction: column;
+  text-align: center;
 }
 
 .title {
   position: relative;
   bottom: 170px;
   text-decoration: none;
-  color: #000;
+  color: #000000;
   font-size: 20px;
   font-weight: bold;
-  padding: 0 15px 0;
-  height: 80px;
-  background-color: white;
+  margin-top: 20px;
+  height: 10px;
 }
-
 
 .image {
-  height: 260px;
-  width: 350px;
+  height: 230px;
   border-radius: 10px;
+  filter: alpha(Opacity=50);
+    opacity: 0.5; 
 }
-
 
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  flex-basis: 200px;
   text-align: center;
-  border: 0.5px solid #e9e9e9;
-  border-radius: 20px;
-  background-color: white;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 300px;
+  height: 500px;
+  margin: 0 50px;
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.card-container.active {
+  background: rgba(255,255,255,0.3);
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
 }
 
 .fa-calendar-alt {
