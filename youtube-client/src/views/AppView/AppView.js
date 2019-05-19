@@ -5,7 +5,10 @@ export default class AppView {
   constructor(data) {
     this.data = data;
     this.model = new AppModel();
-    this.state = { input: '' };
+    this.state = {
+      input: '',
+      currentPage: 1,
+    };
   }
 
   clearBody() {
@@ -15,31 +18,51 @@ export default class AppView {
   renderCards() {
     return this.data.map(clipObject => `
     <div class='card'>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
       <img  class='image' src=${clipObject.image} style="border:none;" />
       <a class='title' href=${clipObject.link}>${clipObject.title}</a>
-      <div class='description'>${clipObject.description}</div>
       <div class='author'>${clipObject.author}</div>
-      <div class='data'>${clipObject.data}</div>
-      <div class='view-count'>${clipObject.viewCount}</div>
+      <div class='data'>
+        <i class="far fa-calendar-alt"></i>
+        ${clipObject.data}
+      </div>
+      <div class='view-count'>
+        <i class="far fa-eye"></i>
+        ${clipObject.viewCount}
+      </div>
+      <div class='description'>${clipObject.description}</div>
     </div>
     `).join('');
+
+
   }
 
   render() {
     const input = document.createElement('input');
+    input.className = 'input';
     const contentCard = document.createElement('div');
     const prevButton = document.createElement('button');
-    prevButton.innerHTML = 'prev';
+    const currentButton = document.createElement('button');
+    currentButton.innerHTML = `${this.state.currentPage}`;
     const nextButton = document.createElement('button');
-    nextButton.innerHTML = 'next';
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.className = 'button-container';
     contentCard.classList.add('card-container');
+    buttonsContainer.appendChild(prevButton);
+    buttonsContainer.append(currentButton);
+    buttonsContainer.appendChild(nextButton);
     document.body.appendChild(input);
-    document.body.appendChild(prevButton);
-    document.body.appendChild(nextButton);
     document.body.appendChild(contentCard);
+
     input.addEventListener('keydown', async (event) => {
       if (event.keyCode === 13) {
         this.state.input = event.target.value;
+        this.state.currentPage = 1;
+        if (this.data) {
+          document.body.appendChild(buttonsContainer);
+        }
+        currentButton.innerHTML = `${this.state.currentPage}`;
         this.data = await this.model.getClipInfo(this.state.input);
         contentCard.innerHTML = this.renderCards();
       }
@@ -48,11 +71,15 @@ export default class AppView {
       this.model.setState({ currentPageToken: this.model.state.prevPageToken });
       this.data = await this.model.getClipInfo(this.state.input);
       contentCard.innerHTML = this.renderCards();
+      this.state.currentPage -= 1;
+      currentButton.innerHTML = `${this.state.currentPage}`;
     });
     nextButton.addEventListener('click', async () => {
       this.model.setState({ currentPageToken: this.model.state.nextPageToken });
       this.data = await this.model.getClipInfo(this.state.input);
       contentCard.innerHTML = this.renderCards();
+      this.state.currentPage += 1;
+      currentButton.innerHTML = `${this.state.currentPage}`;
     });
   }
 }
