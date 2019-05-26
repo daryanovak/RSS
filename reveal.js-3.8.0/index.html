@@ -75,8 +75,37 @@
 				<a href="#/6">
 					<h3>display: grid</h3>
 					<p>creates grid container</p>
-					<img width="500" height="300" data-src="images/css.png" alt="Display: grid">
+					<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+
+&lt;div&gt; class="wrapper"&gt;
+	&lt;div class="item"&gt;1&lt;/div&gt;
+	&lt;div class="item"&gt;2&lt;/div&gt;
+	&lt;div class="item"&gt;3&lt;/div&gt;
+	&lt;div class="item"&gt;4&lt;/div&gt;
+	&lt;div class="item item5"&gt;5&lt;/div&gt;
+	&lt;div class="item"&gt;6&lt;/div&gt;
+&lt;/div>
+												</code></pre>
+					<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+
+.wrapper {
+	display: grid;
+}
+					</code></pre>
 				</a>
+			</section>
+
+			<section>
+				<h3>Explicit Grids</h2>
+					<a href="#/6">
+						<img width="850" height="440" data-src="images/explicit.PNG" alt="Explicit Grid">
+					</a>
+			</section>
+			<section>
+				<h3>Implicit Grids</h2>
+					<a href="#/7">
+						<img width="850" height="440" data-src="images/impl.PNG" alt="Implicitcontainer">
+					</a>
 			</section>
 
 
@@ -88,13 +117,13 @@
 	grid-template-rows: 25% 100px auto;
 }
 				</code></pre>
-				<a href="#/6">
+				<a href="#/8">
 					<img width="500" height="300" data-src="images/grid-template.png" alt="grid-template">
 				</a>
 			</section>
 			<section>
-				<p>There is repeat() function, which saves some typing, like making 10 columns: grid-template-columns:
-					repeat(10, 1fr);</p>
+				<p>There is repeat() function, which saves some typing, like making 3 columns: grid-template-columns:
+					repeat(3, 200px);</p>
 				<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
 .container {
 	grid-template-columns: repeap(3,200px);
@@ -109,15 +138,17 @@
 	grid-template-columns: 100px 50px 100px;
 	grid-template-rows: 80px auto 80px; 
 	grid-column-gap: 10px;
-	grid-row-gap: 15px;
+	grid-row-gap: 10px;
+	or
+	grid-gap:10px
 }
 					</code></pre>
-				<a href="#/6">
+				<a href="#/9">
 					<img width="500" height="300" data-src="images/gap.png" alt="Gap">
 				</a>
 			</section>
 			<section>
-				<h3>grid-column-gap and grid-row-gap</h3>
+				<h3>grid-column and grid-row</h3>
 				<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
 
 &lt;div&gt; class="wrapper"&gt;
@@ -135,23 +166,23 @@
 	grid-column: span 3;
 }
 														</code></pre>
-				<a href="#/6">
+				<a href="#/10">
 					<img width="500" height="300" data-src="images/grid-column.png" alt="grid-column">
 				</a>
 			</section>
 			<section>
-					<h3>grid-column-start grid-column-end grid-row-start grid-row-end</h3>
-					<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
+				<h3>grid-column-start grid-column-end grid-row-start grid-row-end</h3>
+				<pre><code class="hljs" data-trim data-line-numbers="4,8-9">
 
 .item5 {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	}
 						</code></pre>
-					<a href="#/6">
-						<img width="500" height="300" data-src="images/start-end.png" alt="start-end position">
-					</a>
-				</section>
+				<a href="#/11">
+					<img width="500" height="300" data-src="images/start-end.png" alt="start-end position">
+				</a>
+			</section>
 
 
 		</div>
