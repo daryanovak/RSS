@@ -1,6 +1,7 @@
-https://www.youtube.com/watch?v=b5T91VglMr0
+youtube video- https://www.youtube.com/watch?v=b5T91VglMr0
+Presentation transcription-https://github.com/rolling-scopes-school/daryanovak-2019Q1/blob/presentation/reveal.js-3.8.0/text.md
 
-
+Presentation - https://github.com/rolling-scopes-school/daryanovak-2019Q1/blob/presentation/reveal.js-3.8.0/index.html
 
 # reveal.js [![Build Status](https://travis-ci.org/hakimel/reveal.js.svg?branch=master)](https://travis-ci.org/hakimel/reveal.js) <a href="https://slides.com?ref=github"><img src="https://s3.amazonaws.com/static.slid.es/images/slides-github-banner-320x40.png?1" alt="Slides" width="160" height="20"></a>
 
