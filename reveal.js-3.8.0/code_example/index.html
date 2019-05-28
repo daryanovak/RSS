@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .wrapper {
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 1fr, 3fr, 1fr;
+        }
+
+        .item {
+            background: red;
+            color: white;
+            padding: 10px;
+        }
+
+        .item:nth-child(even) {
+            background: pink;
+        }
+        .item5 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item item5">5</div>
+        <div class="item">6</div>
+    </div>
+</body>
+
+</html>
